@@ -114,7 +114,11 @@ export default function JoinPage() {
 
   return (
     <main className="bg-white text-gray-900">
-      <section className="bg-blue-800 text-white py-20 text-center">
+      {/* <section className="bg-blue-800 text-white py-20 text-center"
+       style={{
+        background: 'linear-gradient(to right, #00c6ff, #0072ff, #00c6a0, #00ff72)',
+      }}
+      >
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold mb-4">Join Our Leadership Program</h1>
           <p className="text-lg mb-8">
@@ -124,7 +128,28 @@ export default function JoinPage() {
             Discover the Benefits
           </a>
         </div>
+      </section> */}
+      <section
+        className="relative py-24 text-white w-full mx-0"
+        style={{
+          background: 'linear-gradient(to right, #00c6ff, #0072ff, #00c6a0, #00ff72)', // הגרדיאנט שלך
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-10"></div> {/* רקע כהה עם שקיפות */}
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-4xl font-bold mb-4">Join Our Leadership Program</h1>
+          <p className="text-lg mb-8">
+            Become part of a new generation of leaders. Our program offers personalized learning, immersive simulations, and a commitment to sustainable leadership.
+          </p>
+          <a
+            href="#benefits"
+            className="bg-white text-blue-600 px-6 py-3 rounded-full text-lg font-semibold hover:bg-blue-100 transition duration-300"
+          >
+            Discover the Benefits
+          </a>
+        </div>
       </section>
+
 
       <section className="py-20 bg-blue-50 text-center">
         <div className="container mx-auto px-6">
@@ -169,7 +194,7 @@ export default function JoinPage() {
               </div>
             ))}
 
-            
+
             {/* שדה ההודעה */}
             <div className="mb-6">
               <label htmlFor="message" className="block text-lg text-gray-800 font-semibold mb-2">Message</label>

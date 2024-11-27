@@ -9,7 +9,7 @@ export default function ProgramPage() {
   return (
     <main className="bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24">
+      {/* <section className="relative bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-24">
         <div className="absolute inset-0 bg-black opacity-30"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
           <h1 className="text-5xl font-extrabold tracking-tight leading-tight sm:text-6xl">Our Program</h1>
@@ -24,7 +24,61 @@ export default function ProgramPage() {
             Learn More About Our Program
           </a>
         </div>
+      </section> */}
+
+
+      {/* <section
+        className="relative py-24 text-white w-full mx-0"
+        style={{
+          background: 'linear-gradient(to right, #00c6ff, #0072ff, #00c6a0, #00ff72)',
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-30"></div>
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-5xl font-extrabold tracking-tight leading-tight sm:text-6xl">
+            Our Program
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl font-light max-w-3xl mx-auto">
+            Our AI-enhanced leadership program includes immersive simulations, personalized learning paths, and a focus on ethical, sustainable leadership.
+          </p>
+          <BookOpenIcon className="h-20 w-20 text-Green-400 mx-auto animate-pulse mb-4" />
+          <a
+            href="#program-details"
+            className="mt-8 inline-block px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all"
+          >
+            Learn More About Our Program
+          </a>
+        </div>
+      </section> */}
+      <section
+        className="relative py-24 text-white w-full mx-0"
+        style={{
+          background: 'linear-gradient(to right, #00c6ff, #0072ff, #00c6a0, #00ff72)', // הגרדיאנט החיים שלך
+        }}
+      >
+        {/* רקע כהה עם שקיפות */}
+        <div className="absolute inset-0 bg-black opacity-20"></div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-5xl font-extrabold tracking-tight leading-tight sm:text-6xl">
+            Our Program
+          </h1>
+          <p className="mt-4 text-lg sm:text-xl font-light max-w-3xl mx-auto">
+            Our AI-enhanced leadership program includes immersive simulations, personalized learning paths, and a focus on ethical, sustainable leadership.
+          </p>
+          <BookOpenIcon className="h-20 w-20 text-green-400 mx-auto animate-pulse mb-4" /> {/* אייקון */}
+          <a
+            href="#program-details"
+            className="mt-8 inline-block px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-blue-100 transition-all"
+          >
+            Learn More About Our Program
+          </a>
+        </div>
       </section>
+
+
+
+
 
       {/* Key Features Section */}
       <section id="program-details" className="py-20 bg-white">
@@ -53,7 +107,7 @@ export default function ProgramPage() {
         </div>
       </section>
       <section className="py-12 bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 text-center rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Join Our Learning Networks</h2>
+        <h2 className="text-3xl font-bold text-blue-700 mb-6">Join Our Learning Networks</h2>
         <p className="text-xl text-gray-600 mb-6">Connect with peers in our WhatsApp and Telegram groups to stay updated and learn together.</p>
         <div className="flex justify-center gap-6">
           <a href={WHATSAPP_URL} className="bg-green-500 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 hover:bg-green-600 hover:scale-105">WhatsApp Group</a>
@@ -62,10 +116,10 @@ export default function ProgramPage() {
       </section>
 
       {/* Highlight Section */}
-      <section className="relative py-24 bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
+      <section className="relative py-24 bg-blue-400 text-white">
         <div className="container mx-auto px-6 text-center flex flex-wrap items-center justify-between">
           {/* Background Effect */}
-          <div className="absolute inset-0 bg-black opacity-0"></div>
+          <div className="absolute inset-0 bg-transparent"></div> 
 
           <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center">
             {/* Text Section */}
@@ -126,7 +180,6 @@ export default function ProgramPage() {
                 className="rounded-lg shadow-lg w-full h-auto max-w-full mx-auto md:ml-8"
               />
             </div>
-
           </div>
         </div>
       </section>
@@ -149,7 +202,7 @@ export default function ProgramPage() {
 
       {/* Additional Learning Initiatives Section */}
       <section className="py-20 bg-blue-50 text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 mb-8">Additional Learning Initiatives by Ting Global</h2>
+        <h2 className="text-3xl font-semibold text-blue-700 mb-8">Additional Learning Initiatives by Ting Global</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Future Leaders Program */}
           <div className="bg-gray-100 p-8 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
@@ -191,7 +244,7 @@ export default function ProgramPage() {
 
 
       {/* Call to Action */}
-      <section className="py-20 bg-blue-800 text-white text-center">
+      <section className="py-20 bg-blue-400 text-white text-center">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-semibold mb-6">Join Our Program Today</h2>
           <p className="text-lg mb-8">Be part of a new generation of leaders.</p>

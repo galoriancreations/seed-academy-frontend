@@ -523,16 +523,33 @@ export default function ContactPage() {
 
   return (
     <div>
-      <header className="bg-gradient-to-r from-blue-500 to-teal-400 text-white py-16 text-center">
-        <h1 className="text-4xl font-bold">Contact Us</h1>
-        <p className="mt-4 text-lg">
-          Have a question? Fill out the form below and we will get back to you.
-        </p>
-      </header>
+      <section
+        className="relative py-24 text-white w-full mx-0"
+        style={{
+          background: 'linear-gradient(to right, #00c6ff, #0072ff, #00c6a0, #00ff72)', // הגרדיאנט שלך
+        }}
+      >
+        {/* רקע כהה עם שקיפות */}
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h1 className="text-5xl font-extrabold">Contact Us</h1>
+          <p className="mt-4 text-lg sm:text-xl font-light max-w-3xl mx-auto">
+            Have a question? Fill out the form below and we will get back to you.
+          </p>
+          {/* <a
+            href="#contact-form"
+            className="mt-8 inline-block px-6 py-3 bg-white text-blue-600 font-semibold rounded-lg shadow-md hover:bg-blue-100 transition-all"
+          >
+            Fill Out the Form
+          </a> */}
+        </div>
+      </section>
+
 
       <main className="py-10 px-6">
         <section className="max-w-4xl mx-auto mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Send Us a Message</h2>
+          <h2 className="text-2xl font-semibold text-blue-500 mb-6">Send Us a Message</h2>
 
           <form className="space-y-4" onSubmit={handleSubmit}>
             <input
