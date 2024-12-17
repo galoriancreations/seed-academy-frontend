@@ -2,6 +2,7 @@
 'use client';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
+import Button from "../../components/Button";
 
 export default function JoinPage() {
   const [selectedAvatar, setSelectedAvatar] = useState('');
@@ -210,12 +211,17 @@ export default function JoinPage() {
               {errors.message && <p className="text-red-500 text-sm mt-2">{errors.message}</p>}
             </div>
 
-            <button
+            {/* <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
             >
               Submit Application
-            </button>
+            </button> */}
+            <Button
+              label="Submit Application"
+              variant="primary"
+              className="w-full"
+            />
           </form>
         </div>
       </section>

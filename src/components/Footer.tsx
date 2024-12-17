@@ -1,115 +1,71 @@
-// import Link from 'next/link';
-// import { 
-//   FACEBOOK_URL, 
-//   TWITTER_URL, 
-//   LINKEDIN_URL, 
-//   INSTAGRAM_URL, 
-//   ABOUT_URL, 
-//   CONTACT_URL, 
-//   TERMS_URL,
-//   PRIVACY_URL
-// } from "@/constant/urls.constant";
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-
-// const Footer = () => {
-//   return (
-//     <footer className="bg-blue-600 text-white py-8">
-//   <div className="container mx-auto text-center">
-//     {/* קישורים לדפים פנימיים */}
-//     <div className="mb-4 flex justify-center space-x-6">
-//       <Link href={ABOUT_URL} className="text-white hover:text-gray-300">
-//         About Us
-//       </Link>
-//       <Link href={CONTACT_URL} className="text-white hover:text-gray-300">
-//         Contact
-//       </Link>
-//       <Link href={TERMS_URL} className="text-white hover:text-gray-300">
-//         Terms of Service
-//       </Link>
-//       <Link href={PRIVACY_URL} className="text-white hover:text-gray-300">
-//         Privacy Policy
-//       </Link>
-//     </div>
-
-//     {/* קישורים לרשתות חברתיות */}
-//     <div className="mb-4 flex justify-center space-x-6">
-//       <a href={FACEBOOK_URL} className="text-white hover:text-gray-300">
-//         <i className="fab fa-facebook"></i>
-//       </a>
-//       <a href={INSTAGRAM_URL} className="text-white hover:text-gray-300">
-//         <i className="fab fa-instagram"></i>
-//       </a>
-//       <a href={LINKEDIN_URL} className="text-white hover:text-gray-300">
-//         <i className="fab fa-linkedin"></i>
-//       </a>
-//       <a href={TWITTER_URL} className="text-white hover:text-gray-300">
-//         <i className="fab fa-twitter"></i>
-//       </a>
-//     </div>
-
-//     {/* זכויות יוצרים */}
-//     <p className="text-sm text-gray-300">
-//       © 2025 Ting Global Academy. All rights reserved.
-//     </p>
-//   </div>
-// </footer>
-
-//   );
-// };
-
-// export default Footer;
-import Link from 'next/link';
-import { 
-  FACEBOOK_URL, 
-  TWITTER_URL, 
-  LINKEDIN_URL, 
-  INSTAGRAM_URL, 
-  ABOUT_URL, 
-  CONTACT_URL, 
+import Link from 'next/link'; 
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from 'react-icons/fa';
+import {
+  FACEBOOK_URL,
+  TWITTER_URL,
+  LINKEDIN_URL,
+  INSTAGRAM_URL,
+  ABOUT_URL,
+  CONTACT_URL,
   TERMS_URL,
-  PRIVACY_URL
-} from "@/constant/urls.constant";
-import '@fortawesome/fontawesome-free/css/all.min.css';
+  PRIVACY_URL,
+} from '@/constant/urls.constant';
+
+const internalLinks = [
+  { label: 'About Us', href: ABOUT_URL },
+  { label: 'Contact', href: CONTACT_URL },
+  { label: 'Terms of Service', href: TERMS_URL },
+  { label: 'Privacy Policy', href: PRIVACY_URL },
+];
+
+const socialLinks = [
+  { icon: <FaFacebook />, href: FACEBOOK_URL, label: 'Facebook' },
+  { icon: <FaInstagram />, href: INSTAGRAM_URL, label: 'Instagram' },
+  { icon: <FaLinkedin />, href: LINKEDIN_URL, label: 'LinkedIn' },
+  { icon: <FaTwitter />, href: TWITTER_URL, label: 'Twitter' },
+];
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-100 bg-opacity-80 text-gray-800 py-8">
+    <footer className="bg-blue-500 text-white py-8"> {/* צבע רקע כחול */}
       <div className="container mx-auto text-center">
-        {/* קישורים לדפים פנימיים */}
-        <div className="mb-2 flex justify-center space-x-4 px-4">
-          <Link href={ABOUT_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            About Us
-          </Link>
-          <Link href={CONTACT_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            Contact
-          </Link>
-          <Link href={TERMS_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            Terms of Service
-          </Link>
-          <Link href={PRIVACY_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            Privacy Policy
-          </Link>
+        {/* Internal Links */}
+        <div className="mb-4 flex justify-center flex-wrap gap-6">
+          {internalLinks.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              className="text-white hover:text-blue-300 transition duration-300"
+            >
+              {label}
+            </Link>
+          ))}
         </div>
 
-        {/* קישורים לרשתות חברתיות */}
-        <div className="mb-2 flex justify-center space-x-4 px-4">
-          <a href={FACEBOOK_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            <i className="fab fa-facebook"></i>
-          </a>
-          <a href={INSTAGRAM_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href={LINKEDIN_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            <i className="fab fa-linkedin"></i>
-          </a>
-          <a href={TWITTER_URL} className="text-gray-800 hover:text-blue-500 px-4">
-            <i className="fab fa-twitter"></i>
-          </a>
+        {/* Social Media Links */}
+        <div className="mb-4 flex justify-center flex-wrap gap-6">
+          {socialLinks.map(({ icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-blue-300 transition duration-300"
+              aria-label={label}
+            >
+              {icon}
+            </a>
+          ))}
         </div>
 
-        {/* זכויות יוצרים */}
-        <p className="text-sm text-gray-400 mt-2">
-          © 2025 Ting Global Academy. All rights reserved.
+        {/* Copyright */}
+        <p className="text-sm text-gray-300 mt-4">
+          © {new Date().getFullYear()} Seed Academy. All rights reserved.
         </p>
       </div>
     </footer>
