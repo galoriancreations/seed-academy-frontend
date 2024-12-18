@@ -1,11 +1,26 @@
 
+"use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classNames from 'classnames'; // יבוא של classnames
-import { aboutContent } from '../../constant/aboutContent';
+import { aboutContent } from '../../constant/aboutContent'; // עדיין משתמש בנתונים של heroSection ו-storySection
 
 export default function AboutPage() {
-  const { heroSection, storySection, teamSection } = aboutContent;
+  const [teamSection, setTeamSection] = useState(null); // סטייט חדש לנתוני הצוות
+  const { heroSection, storySection } = aboutContent;
+
+  useEffect(() => {
+    // קריאה ל-API כדי להביא את המידע על הצוות
+    fetch('/api/teamSection')
+      .then((response) => response.json())
+      .then((data) => setTeamSection(data))
+      .catch((error) => console.error('Error fetching team section:', error));
+  }, []);
+
+  // אם המידע לא הושלם, מציגים Loader
+  if (!teamSection) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <main className="text-gray-900">
@@ -73,4 +88,3 @@ export default function AboutPage() {
     </main>
   );
 }
-
