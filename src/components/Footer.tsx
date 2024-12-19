@@ -1,72 +1,50 @@
-import Link from 'next/link'; 
-import {
-  FaFacebook,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from 'react-icons/fa';
-import {
-  FACEBOOK_URL,
-  TWITTER_URL,
-  LINKEDIN_URL,
-  INSTAGRAM_URL,
-  ABOUT_URL,
-  CONTACT_URL,
-  TERMS_URL,
-  PRIVACY_URL,
-} from '@/constant/urls.constant';
 
-const internalLinks = [
-  { label: 'About Us', href: ABOUT_URL },
-  { label: 'Contact', href: CONTACT_URL },
-  { label: 'Terms of Service', href: TERMS_URL },
-  { label: 'Privacy Policy', href: PRIVACY_URL },
-];
 
-const socialLinks = [
-  { icon: <FaFacebook />, href: FACEBOOK_URL, label: 'Facebook' },
-  { icon: <FaInstagram />, href: INSTAGRAM_URL, label: 'Instagram' },
-  { icon: <FaLinkedin />, href: LINKEDIN_URL, label: 'LinkedIn' },
-  { icon: <FaTwitter />, href: TWITTER_URL, label: 'Twitter' },
-];
+import { FACEBOOK_URL, LINKEDIN_URL, TWITTER_URL } from "@/constant/urls.constant";
+import Link from "next/link";
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
+  const footerLinks = [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Service", href: "/terms-of-service" },
+    { label: "Contact Us", href: "/contact" },
+  ];
+
+  const socialLinks = [
+    { icon: <FaFacebook size={24} />, href: FACEBOOK_URL },
+    { icon: <FaTwitter size={24} />, href: TWITTER_URL },
+    { icon: <FaLinkedin size={24} />, href: LINKEDIN_URL },
+  ];
+
   return (
-    <footer className="bg-blue-500 text-white py-8"> {/* צבע רקע כחול */}
-      <div className="container mx-auto text-center">
-        {/* Internal Links */}
-        <div className="mb-4 flex justify-center flex-wrap gap-6">
-          {internalLinks.map(({ label, href }) => (
-            <Link
-              key={href}
-              href={href}
-              className="text-white hover:text-blue-300 transition duration-300"
-            >
+  
+    <footer className=" bg-blue-400 bg-opacity-10 text-gray-800 py-8 mt-auto border-t border-gray-300">
+      <div className="container mx-auto px-6 text-center">
+        
+        <div className="mt-4 space-x-6 mb-4">
+          {footerLinks.map(({ label, href }) => (
+            <Link key={href} href={href} className="hover:text-gray-400">
               {label}
             </Link>
           ))}
         </div>
 
-        {/* Social Media Links */}
-        <div className="mb-4 flex justify-center flex-wrap gap-6">
-          {socialLinks.map(({ icon, href, label }) => (
+        <p className="mb-4">&copy; 2024 Ting Global Academy. All Rights Reserved.</p>
+
+        <div className="mt-4 flex justify-center space-x-6 mb-4">
+          {socialLinks.map(({ icon, href }, index) => (
             <a
-              key={label}
+              key={index}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-blue-300 transition duration-300"
-              aria-label={label}
+              className="hover:text-gray-400"
             >
               {icon}
             </a>
           ))}
         </div>
-
-        {/* Copyright */}
-        <p className="text-sm text-gray-300 mt-4">
-          © {new Date().getFullYear()} Seed Academy. All rights reserved.
-        </p>
       </div>
     </footer>
   );
